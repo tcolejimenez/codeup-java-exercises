@@ -25,10 +25,30 @@ public class Person {
 
 
     public static void main(String[] args) {
+
+        System.out.println("Number 1");
         Person me = new Person("Cole Jimenez");
         System.out.println(me.getName());
         me.setName("Cole da Cutie");
         System.out.println(me.getName());
         me.sayHello();
+
+
+        System.out.println("Code block 3");
+        Person person1 = new Person("John");
+        Person person2 = person1;
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+        person2.setName("Jane");
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+        System.out.println(person1 == person2);
+
+
+
+
+
+
+
     }
 }
