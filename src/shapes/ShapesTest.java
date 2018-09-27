@@ -19,5 +19,15 @@ public class ShapesTest {
         Square box2 = new Square(5);
         System.out.println("The perimeter of box 2 is " + box2.getPerimeter() + ". ");
         System.out.println("The area of box 2 is " + box2.getArea() + ". ");
+
+
+        Measurable myShape;
+        myShape = new Square(3);
+        System.out.println("The area of my Shape is " + myShape.getArea() + ". ");
+        myShape = new Rectangle(3, 4);
+        System.out.println("The area of my Shape is now " + myShape.getArea() + ". ");
+//        System.out.println("Heads up, the length of my Shape is " + myShape.getLength() + ". ");
+
+
     }
 }

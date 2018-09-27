@@ -4,6 +4,12 @@ import util.Input;
 
 public class MoviesApplication {
     static Input inputter = new Input();
+    //add movies array as variable to class
+    //public and accessible to all methods
+    //(need to instantiate if not static)
+    //make member of class if not needed to pass around outside of class
+
+
 
     public static void main(String[] args) {
 
@@ -87,7 +93,9 @@ public class MoviesApplication {
             newArray[i] = oldArray[i];
         }
 
-        //add last element (new person)
+        //add last element (new movie)
+        //get movie title
+        //get category
         newArray[oldArray.length] = new Movie(inputter.getString("Name of movie: "), inputter.getString("Category of movie: "));
 
         return newArray;

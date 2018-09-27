@@ -1,5 +1,6 @@
 package util;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
@@ -16,14 +17,37 @@ public class Input {
     }
 
     //with optional prompt
-    public String getString(String prompt) {
+    public static String getString(String prompt) {
         System.out.println(prompt);
         return scanner.nextLine();
     }
 
+    //should keep prompting the user for input until they give an integer within the min and max
+    public String getValidString(ArrayList<String> validInput, String prompt) {
+        System.out.println(prompt);
+        String userInput = getString(prompt);
+        if (validInput.contains(userInput)) return userInput;
+        else {
+            System.out.println("Input invalid!");
+            return getValidString(validInput, prompt);
+        }
+    }
+
+    //should keep prompting the user for input until they give an integer within the min and max
+    public static String getValidString(ArrayList<String> validInput, String prompt, String errorPrompt) {
+        System.out.println(prompt);
+        String userInput = scanner.nextLine();
+            if (validInput.contains(userInput)) return userInput;
+            else {
+                System.out.println(errorPrompt);
+                return getValidString(validInput, prompt, errorPrompt);
+            }
+        }
+
+
     // return true if the user enters y, yes, or variants thereof, and false otherwise
-    public boolean yesNo() {
-        String input = scanner.next();
+    public static boolean yesNo() {
+        String input = scanner.nextLine();
         if (input.charAt(0) == 'y') {
             return true;
         } else
@@ -34,7 +58,7 @@ public class Input {
     //with optional prompt
     public static boolean yesNo(String prompt) {
         System.out.println(prompt);
-        String input = scanner.next();
+        String input = scanner.nextLine();
         if (input.charAt(0) == 'y') {
             return true;
         } else
@@ -63,13 +87,14 @@ public class Input {
         }
     }
 
-    public int getInt() {
+    public static int getInt() {
         Scanner scan = new Scanner(System.in);
         int userInt = scan.nextInt();
+
         return userInt;
     }
 
-    public int getInt(String prompt) {
+    public static int getInt(String prompt) {
         System.out.println(prompt);
         Scanner scan = new Scanner(System.in);
         int userInt = scan.nextInt();
